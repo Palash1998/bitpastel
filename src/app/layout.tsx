@@ -7,11 +7,11 @@ export const viewport = {
 };
 
 export const metadata = {
-  title: 'Next.js with Tailwind CSS',
-  description: 'A boilerplate project with Next.js and Tailwind CSS',
+  title: 'Bitpastel',
+  description: 'This is a Bitpastel website Create By Palash',
   icons: {
     icon: [
-      { url: '/favicon.ico', type: 'image/x-icon' }
+      { url: '/img_bitpastellogo02300dpi_3.png', type: 'image/x-icon' }
     ],
   },
 };
