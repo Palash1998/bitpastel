@@ -4,7 +4,7 @@ import Button from '@/components/ui/Button'
 const HeroSection = () => {
   return (
       <section
-        className="relative h-[686px] bg-cover bg-center bg-no-repeat"
+        className="relative h-[686px] bg-cover bg-no-repeat md:bg-center bg-[position:65%_10%]"
         style={{
           backgroundImage: `
       linear-gradient(270deg, rgba(0, 0, 0, 0) 49.05%, rgba(0, 0, 0, 0.5) 78.85%),
