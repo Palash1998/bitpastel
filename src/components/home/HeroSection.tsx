@@ -14,14 +14,14 @@ const HeroSection = () => {
       >
         <div className="relative z-10 container mx-auto px-4 h-full pt-[60px]">
           {/* Hero Content */}
-          <div className="h-full content-end md:content-center md:text-left text-center md:pb-0 pb-[60px] max-w-[35rem]">
+          <div className="h-full content-end md:content-center md:text-left text-center md:pb-0 pb-[40px] max-w-[35rem]">
             <h1 className="md:text-[38px] text-[33px] text-white md:leading-[48px] leading-[40px] mb-6">
               <span className="">Crafting </span>
               <span className="font-bold">Digital Solutions</span>
               <span className=""> for your business</span>
             </h1>
-            <div className="text-[rgba(255,255,255,1)]">
-              <div className="flex gap-4 md:mb-1 mb-0 md:justify-start justify-center">
+            <div className="text-[rgba(255,255,255,1)] w-fit md:size-auto">
+              <div className="flex gap-4 md:mb-1 mb-0 ">
                 <Image
                   src="/images/img_materialsymbolscheckrounded.svg"
                   alt="Check"
@@ -30,7 +30,7 @@ const HeroSection = () => {
                 />
                 <p className="text-[18px] md:leading-[48px] leading-[34px]">Shopify Plus & eCom Development</p>
               </div>
-              <div className="flex gap-4 md:mb-1 mb-0 md:justify-start justify-center">
+              <div className="flex gap-4 md:mb-1 mb-0 ">
                 <Image
                   src="/images/img_materialsymbolscheckrounded.svg"
                   alt="Check"
@@ -39,7 +39,7 @@ const HeroSection = () => {
                 />
                 <p className="text-[18px] md:leading-[48px] leading-[34px]">Web & Mobile App Development</p>
               </div>
-              <div className="flex gap-4 md:mb-1 mb-0 md:justify-start justify-center">
+              <div className="flex gap-4 md:mb-1 mb-0 ">
                 <Image
                   src="/images/img_materialsymbolscheckrounded.svg"
                   alt="Check"
