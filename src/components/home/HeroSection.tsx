@@ -14,7 +14,7 @@ const HeroSection = () => {
       >
         <div className="relative z-10 container mx-auto px-4 h-full pt-[60px]">
           {/* Hero Content */}
-          <div className="h-full content-center max-w-[35rem]">
+          <div className="h-full md:content-center content-end md:pb-0 pb-[60px] max-w-[35rem]">
             <h1 className="text-[38px] text-white leading-[48px] mb-6">
               <span className="">Crafting </span>
               <span className="font-bold">Digital Solutions</span>
