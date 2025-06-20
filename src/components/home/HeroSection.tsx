@@ -21,7 +21,7 @@ const HeroSection = () => {
               <span className=""> for your business</span>
             </h1>
             <div className="text-[rgba(255,255,255,1)]">
-              <div className="flex gap-4 mb-1">
+              <div className="flex gap-4 md:mb-1 mb-0">
                 <Image
                   src="/images/img_materialsymbolscheckrounded.svg"
                   alt="Check"
@@ -30,7 +30,7 @@ const HeroSection = () => {
                 />
                 <p className="text-[18px] leading-[48px]">Shopify Plus & eCom Development</p>
               </div>
-              <div className="flex gap-4 mb-1">
+              <div className="flex gap-4 md:mb-1 mb-0">
                 <Image
                   src="/images/img_materialsymbolscheckrounded.svg"
                   alt="Check"
@@ -39,7 +39,7 @@ const HeroSection = () => {
                 />
                 <p className="text-[18px] leading-[48px]">Web & Mobile App Development</p>
               </div>
-              <div className="flex gap-4 mb-1">
+              <div className="flex gap-4 md:mb-1 mb-0">
                 <Image
                   src="/images/img_materialsymbolscheckrounded.svg"
                   alt="Check"
