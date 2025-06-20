@@ -28,7 +28,7 @@ const HeroSection = () => {
                   width={24}
                   height={24}
                 />
-                <p className="text-[18px] leading-[48px]">Shopify Plus & eCom Development</p>
+                <p className="text-[18px] md:leading-[48px] leading-[34px]">Shopify Plus & eCom Development</p>
               </div>
               <div className="flex gap-4 md:mb-1 mb-0">
                 <Image
@@ -37,7 +37,7 @@ const HeroSection = () => {
                   width={24}
                   height={24}
                 />
-                <p className="text-[18px] leading-[48px]">Web & Mobile App Development</p>
+                <p className="text-[18px] md:leading-[48px] leading-[34px]">Web & Mobile App Development</p>
               </div>
               <div className="flex gap-4 md:mb-1 mb-0">
                 <Image
@@ -46,7 +46,7 @@ const HeroSection = () => {
                   width={24}
                   height={24}
                 />
-                <p className="text-[18px] leading-[48px]">Marketing Solutions</p>
+                <p className="text-[18px] md:leading-[48px] leading-[34px]">Marketing Solutions</p>
               </div>
             </div>
             <Button variant="secondary" size="lg" className="rounded-md px-8 mt-8 hover:text-white hover:bg-primary-teal transition-colors duration-200">
