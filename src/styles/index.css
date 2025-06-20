@@ -1,0 +1,53 @@
+@import './tailwind.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 1536px) {
+    .container {
+        max-width: 1366px !important;
+    } 
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Header scroll state classes */
+/* .custom-background{
+position: relative;
+}
+.custom-background::before{
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.6);
+z-index: -1;
+} */
+
+.work-with-us-features ul{
+  padding-left: 35px;
+}
+.work-with-us-features ul li{
+list-style: disc;
+}
+@media screen and (max-width: 767px) {
+  .footer .footer-wrapper{
+  text-align: center;
+  gap: 40px;
+  }
+  .footer .footer-wrapper img{
+  margin: 0 auto;
+  }
+  .footer .social-media-wrapper{
+  justify-content: center;
+  }
+}
