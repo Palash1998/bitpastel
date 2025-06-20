@@ -109,6 +109,9 @@
 .header-scrolled img {
   filter: invert(1);
 }
+.header-scrolled .toggle-ham-icon{
+  filter: invert(1);
+}
 .show-more-btn {
   min-width: 260px;
   max-width: 260px;
