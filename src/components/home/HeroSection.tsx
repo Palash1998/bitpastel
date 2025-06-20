@@ -20,7 +20,7 @@ const HeroSection = () => {
               <span className="font-bold">Digital Solutions</span>
               <span className=""> for your business</span>
             </h1>
-            <div className="text-[rgba(255,255,255,1)] w-fit md:size-auto">
+            <div className="text-[rgba(255,255,255,1)] w-fit md:size-auto md:mx-0 mx-auto">
               <div className="flex gap-4 md:mb-1 mb-0 ">
                 <Image
                   src="/images/img_materialsymbolscheckrounded.svg"
