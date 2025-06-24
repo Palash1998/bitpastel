@@ -34,7 +34,7 @@ const CtaSection = () => {
                 <br />
                 we can help you unlock for your business!
               </h2>
-              <p className="text-white mb-8 leading-relaxed max-w-[90%] md:max-w-[100%] mr-auto">
+              <p className="text-white mb-8 leading-relaxed max-w-[80%] md:max-w-[100%] mr-auto">
                 We understand your unique way of work and provide bespoke technology solutions.
                 Our team works in sync with you ensuring seamless delivery and optimum quality. We
                 are eager to know about your business
