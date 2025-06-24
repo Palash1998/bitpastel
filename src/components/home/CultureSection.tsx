@@ -33,7 +33,7 @@ const CultureSection = () => {
     {
       id: 3,
       title: "Cool & Elegant Designs",
-      icon: "/images/group.svg",
+      icon: "/images/Group.svg",
       mobileTextColor: "text-[rgba(85,184,208,1)]",
       mobileBg: "bg-[rgba(216,247,255,1)]",
       items: [
