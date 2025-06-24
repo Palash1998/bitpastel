@@ -3,24 +3,25 @@ import Image from 'next/image'
 import Button from '@/components/ui/Button'
 const ShopifyStoreSection = () => {
   return (
-      <section className="pt-16 lg:pt-16 ">
+      <section className="pt-12 lg:pt-16 ">
         <div className="container mx-auto px-4  ">
-          <div className="flex flex-col lg:flex-row items-center gap-12 rounded-[40px] p-8 bg-primary-mint">
+          <div className="flex flex-col lg:flex-row items-center gap-12 rounded-[40px] md:p-8 px-4 pt-4 pb-12 bg-primary-mint md:text-left text-center ">
             <div className="lg:w-1/2 w-full lg:pr-12 lg:pl-8">
-              <h2 className="text-[35px] font-bold text-dark mb-6 leading-[45px]">
+              <h2 className="text-[35px] font-bold text-[#2a2a2a] mb-6 md:leading-[45px] leading-[24px]">
                 Managing 200+ Shopify Stores Worldwide & 50+ Shopify Plus Stores
               </h2>
-              <p className="text-secondary text-lg leading-relaxed mb-8">
+              <p className="text-secondary text-[16px] leading-[26px] md:leading-relaxed mb-8">
                 We have helped 100+ brands grow from scratch to $1M GMV.
                 <br />
-                At Bitpastel studio, we build differentiated, fast, and scalable online stores to
-                help you provide the best customer experience!
+                At Bitpastel studio, we build differentiated, fast, and scalable online
+                <br />
+                 stores to help you provide the best customer experience!
               </p>
-              <Button variant="teal" className="rounded-md px-10 py-3 h-auto text-[16px]">
+              <Button variant="teal" className="btn font-inter h-auto font-[400]">
                 Explore Our Portfolio
               </Button>
             </div>
-            <div className="lg:w-1/2 w-full">
+            <div className="lg:w-1/2 w-full md:order-last order-first">
               <Image
                 src="/images/shopify_client_image.jpg"
                 alt="Team working together"
