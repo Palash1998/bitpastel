@@ -5,8 +5,8 @@ const Footer = () => {
   return (
             <footer className="bg-primary-dark text-white pt-16 lg:pt-16 pb-6 footer">
               <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 align-top footer-wrapper">
-                  <div className="space-y-3">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-16 md:gap-8 mb-8 align-top footer-wrapper">
+                  <div className="space-y-3 col-span-2 col-start-1 md:col-span-1 md:col-start-auto">
                     <Link href="/">
                     <Image
                       src="/images/img_bitpastellogo02300dpi_3.png"
@@ -21,7 +21,7 @@ const Footer = () => {
                       <br />
                       Sector V, Salt Lake City, Kolkata - 700091
                     </p>
-                    <div className="flex space-x-4 social-media-wrapper">
+                    <div className="flex space-x-4 pt-2 md:pt-0 social-media-wrapper">
                       <div className="w-8 h-8 border border-white rounded-full flex items-center justify-center  hover:bg-primary-teal transition-background-color cursor-pointer">
                         <Image
                           src="/images/img_basilfacebooksolid.svg"
@@ -78,7 +78,7 @@ const Footer = () => {
                       </Link>
                     </div>
                   </div>
-                  <div className="text-sm space-y-4 md:ml-auto content-end">
+                  <div className="text-sm space-y-4 md:ml-auto content-end col-span-2 col-start-1 md:col-span-1 md:col-start-auto">
                     <p>
                       <span>US: +1 (872) 444 6679</span>
                     </p>
@@ -90,7 +90,7 @@ const Footer = () => {
                   </div>
                 </div>
                 <div className="pt-6" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
-                  <p className="text-center text-sm">
+                  <p className="text-center md:text-sm text-[12px] font-roboto font-[300] md:max-w-[100%] max-w-[80%] mx-auto">
                     Copyright © Bitpastel Solution Private Limited 2025 | All Rights Reserved | Privacy
                     Policy
                   </p>
