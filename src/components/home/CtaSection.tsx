@@ -28,7 +28,7 @@ const CtaSection = () => {
           
           {/* Content */}
           <div className="relative px-[16px] md:py-[130px] py-[60px] lg:px-[66px]">
-            <div className="lg:max-w-[520px] md:max-w-[480px] max-w-[280px]">
+            <div className="lg:max-w-[520px] md:max-w-[480px] max-w-[290px]">
               <h2 className="font-bold font-source text-white mb-6 leading-tight">
                 Discover the digital possibilities
                 <br />
