@@ -1,3 +1,6 @@
+
+
+
 'use client';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -13,9 +16,7 @@ interface Testimonial {
 
 interface TestimonialsSectionProps {
   testimonials?: Testimonial[];
-  initialShowCount?: number;
 }
-
 const defaultTestimonials: Testimonial[] = [
   {
     id: '1',
@@ -91,50 +92,39 @@ const defaultTestimonials: Testimonial[] = [
   }
 ];
 
-const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ 
-  testimonials = defaultTestimonials, 
-  initialShowCount = 6 
+const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
+  testimonials = defaultTestimonials,
 }) => {
   const [showAll, setShowAll] = useState(false);
+  const [initialShowCount, setInitialShowCount] = useState(6);
   const [visibleTestimonials, setVisibleTestimonials] = useState<Testimonial[]>([]);
   const [animatingItems, setAnimatingItems] = useState<Set<string>>(new Set());
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
-    setVisibleTestimonials(testimonials.slice(0, initialShowCount));
-  }, [testimonials, initialShowCount]);
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      const count = isMobile ? 3 : 6;
+      setInitialShowCount(count);
+      setVisibleTestimonials(testimonials.slice(0, count));
+    };
 
-const toggleShowAll = () => {
-  if (isAnimating) return;
-  setIsAnimating(true);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [testimonials]);
 
-  if (showAll) {
-    // Collapse animation
-    const itemsToRemove = testimonials.slice(initialShowCount);
+  const loadMoreTestimonials = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
     
-    // Mark items for animation
-    setAnimatingItems(prev => {
-      const newSet = new Set(prev);
-      itemsToRemove.forEach(item => newSet.add(item.id));
-      return newSet;
-    });
-
-    setTimeout(() => {
-      setVisibleTestimonials(testimonials.slice(0, initialShowCount));
-      setAnimatingItems(new Set());
-      setShowAll(false);
-      setIsAnimating(false);
-    }, 300);
-  } else {
-    // Expand animation
-    setShowAll(true);
-    const newItems = testimonials.slice(initialShowCount);
+    // Show all testimonials with animation
+    const newItems = testimonials.slice(visibleTestimonials.length);
     
     newItems.forEach((testimonial, index) => {
       setTimeout(() => {
         setVisibleTestimonials(prev => [...prev, testimonial]);
         
-        // Correct way to add to Set
         setAnimatingItems(prev => {
           const newSet = new Set(prev);
           newSet.add(testimonial.id);
@@ -147,55 +137,46 @@ const toggleShowAll = () => {
             newSet.delete(testimonial.id);
             return newSet;
           });
-          if (index === newItems.length - 1) setIsAnimating(false);
+          if (index === newItems.length - 1) {
+            setIsAnimating(false);
+            setShowAll(true);
+          }
         }, 300);
       }, index * 150);
     });
-  }
-};
+  };
 
-  const hasMoreTestimonials = testimonials.length > initialShowCount;
+  const hasMoreTestimonials = !showAll && testimonials.length > initialShowCount;
 
   return (
-    <section id="stories" className="pt-16 lg:pt-16">
+    <section id="stories" className="pt-12 lg:pt-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-primary mb-16">Stories</h2>
-        
+        <h2 className="font-source font-bold text-center text-[rgba(30,30,30,1)] md:mb-16 mb-8">Stories</h2>
+
         <div className="columns-1 lg:columns-2 gap-8 space-y-8 mx-auto">
           {visibleTestimonials.map((testimonial) => (
-            <div 
+            <div
               key={testimonial.id}
-              className={`${testimonial.bgColor} rounded-2xl p-8 content-end text-white shadow-lg transform transition-all min-h-[270px] duration-300 break-inside-avoid mb-8 ${
-                animatingItems.has(testimonial.id) 
-                  ? showAll 
-                    ? 'animate-fade-in-up' 
-                    : 'animate-fade-out-down'
-                  : ''
+              className={`${testimonial.bgColor} rounded-2xl p-8 content-end text-white shadow-lg transform transition-all min-h-[277px] duration-300 break-inside-avoid mb-8 ${
+                animatingItems.has(testimonial.id) ? 'animate-fade-in-up' : ''
               }`}
             >
               <div className="relative mb-6">
-                {/* <Image 
-                  src="/images/img_vector_cyan_300_14x14.svg" 
-                  alt="Quote" 
-                  width={28} 
-                  height={28}
-                  className="absolute -top-4 -left-2 opacity-70"
-                /> */}
-                <p className="text-lg leading-relaxed italic md:pl-4">
+                <p className="text-lg leading-relaxed md:pl-4 line-clamp-4">
                   "{testimonial.message}"
                 </p>
               </div>
-              <div className="flex items-center space-x-4 mt-auto pt-4 ">
-                <Image 
-                  src={testimonial.image} 
-                  alt={testimonial.name} 
-                  width={56} 
+              <div className="flex items-center space-x-4 mt-auto pt-4">
+                <Image
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  width={56}
                   height={56}
                   className="rounded-full border-2 border-white"
                 />
                 <div>
-                  <h4 className="text-xl font-semibold">{testimonial.name}</h4>
-                  <p className="text-sm opacity-90">{testimonial.title}</p>
+                  <h4 className="font-[600] font-source">{testimonial.name}</h4>
+                  <p className="opacity-90 italic">{testimonial.title}</p>
                 </div>
               </div>
             </div>
@@ -205,16 +186,13 @@ const toggleShowAll = () => {
         {hasMoreTestimonials && (
           <div className="flex justify-center mt-12">
             <button
-              onClick={toggleShowAll}
+              onClick={loadMoreTestimonials}
               disabled={isAnimating}
-              className={`show-more-btn group flex items-center space-x-3  px-8 py-3 transition-all duration-300  focus:outline-none  ${
+              className={`group flex show-more-btn btn items-center space-x-3 transition-all duration-300 focus:outline-none ${
                 isAnimating ? 'opacity-70 cursor-not-allowed' : ''
               }`}
             >
-              <span>
-                {/* {showAll ? 'Show Less' : `Show More (${testimonials.length - initialShowCount} more)`} */}
-                {showAll ? 'Show Less' : `Explore more stories`}
-              </span>
+              <span>Explore more stories</span>
             </button>
           </div>
         )}
